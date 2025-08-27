@@ -1,3 +1,3 @@
-1.5.5
+1.5.6
 https://github.com/Trofline/Tools/releases/download/SaveManager/OutlastSaveManager.zip
 https://github.com/Trofline/Updater/releases/download/updater/UpdaterSaveManager.zip
