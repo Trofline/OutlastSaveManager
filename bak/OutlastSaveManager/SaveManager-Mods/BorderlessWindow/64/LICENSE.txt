@@ -1,0 +1,7 @@
+﻿This folder contains the "Outlast Borderless Window" mod by lanylow.
+
+Source: https://github.com/lanylow/outlast-borderless-window
+License: GNU GPL-3.0
+
+The dinput8.dll file is unmodified and redistributed in compliance with the GPL-3.0 license.
+The source code of the mod is available at the link above.

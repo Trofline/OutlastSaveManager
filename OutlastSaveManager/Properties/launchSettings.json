@@ -1,0 +1,28 @@
+{
+  "profiles": {
+    "vanilla": {
+      "commandName": "Project",
+      "commandLineArgs": "vanilla",
+      "workingDirectory": "G:\\SteamLibrary\\steamapps\\common\\Outlast\\SaveManager"
+    },
+    "alldoorsunlocked": {
+      "commandName": "Project",
+      "commandLineArgs": "alldoorsunlocked",
+      "workingDirectory": "G:\\SteamLibrary\\steamapps\\common\\Outlast\\SaveManager"
+    },
+    "macca": {
+      "commandName": "Project",
+      "commandLineArgs": "macca",
+      "workingDirectory": "G:\\SteamLibrary\\steamapps\\common\\Outlast\\SaveManager"
+    },
+    "superjump": {
+      "commandName": "Project",
+      "commandLineArgs": "superjump",
+      "workingDirectory": "G:\\SteamLibrary\\steamapps\\common\\Outlast\\SaveManager"
+    },
+    "no args": {
+      "commandName": "Project",
+      "workingDirectory": "G:\\SteamLibrary\\steamapps\\common\\Outlast\\SaveManager"
+    }
+  }
+}

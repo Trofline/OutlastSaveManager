@@ -1,0 +1,591 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>savemanagerlogo.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="savemanagerlogo.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.3405.78" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="prop.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>prop.settings</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="prop.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>prop.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="README.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\1. AdminBlock\OL_01 Admin Gates Start of Game.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\1. AdminBlock\OL_02 Crawled Under Gate.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\1. AdminBlock\OL_03 Enter Window.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\1. AdminBlock\OL_04 Dropping From Vent.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\1. AdminBlock\OL_05 Meet Father Martin.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\1. AdminBlock\OL_06 Grab Keycard.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\1. AdminBlock\OL_07 Chris in Security Room.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\1. AdminBlock\OL_08 Enter Basement.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\1. AdminBlock\OL_09 Power Turned On.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\1. AdminBlock\OL_10 Exit Basement, Return To Security.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\2. PrisonBlock\OL_01 Wake Up In Prison Cell.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\2. PrisonBlock\OL_02 Escaped Prison Cell.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\2. PrisonBlock\OL_03 Run Up Stairs.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\2. PrisonBlock\OL_04 Top of Stairs.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\2. PrisonBlock\OL_05 Pushed Button in Room With Dude.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\2. PrisonBlock\OL_06 Escaped Prisoners.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\2. PrisonBlock\OL_07 Enter Showers.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\2. PrisonBlock\OL_08 Exit Showers.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\2. PrisonBlock\OL_09 Chris Breaks Window.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\2. PrisonBlock\OL_10 After Fire Cutscene.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\2. PrisonBlock\OL_11 Escaped Chris.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\2. PrisonBlock\OL_12 Before Jumpscare Cutscene.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\2. PrisonBlock\OL_13 Top of Prison Cell Room.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\2. PrisonBlock\OL_14 Follow Wallrider.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\3. Sewers\OL_01 Sewers Enter.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\3. Sewers\OL_02 Flush Water.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\3. Sewers\OL_03 Water Flushed.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\3. Sewers\OL_04 Top of Ladder.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\3. Sewers\OL_05 To Cistern, After Room With Friendly Varient.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\3. Sewers\OL_06 Crawling In Bloody Water.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\3. Sewers\OL_07 Chris in Big Room With Water, Water Hops.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\3. Sewers\OL_08 Varient Runs At You.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\3. Sewers\OL_09 To Male Ward.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\4. MaleWard\OL_01 Male Ward Start.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\4. MaleWard\OL_02 Start of Chase.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\4. MaleWard\OL_03 Middle of Chase.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\4. MaleWard\OL_04 Trager Cutscene.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\4. MaleWard\OL_05 Trager Torture Done.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\4. MaleWard\OL_06 Drop To Push Object.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\4. MaleWard\OL_07 Drop Out of 2nd Vent.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\4. MaleWard\OL_08 Grab Elevator Key.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\4. MaleWard\OL_09 Use Key in Elevator.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\4. MaleWard\OL_10 Trager Death.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\4. MaleWard\OL_11 Father Martin Talking.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\4. MaleWard\OL_12 Enter Burning Cafeteria.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\4. MaleWard\OL_13 Extinguish Flames.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\4. MaleWard\OL_14 Sprinklers On.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\5. Courtyard\OL_01 Enter Courtyard.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\5. Courtyard\OL_02 Unlocked Shed.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\5. Courtyard\OL_03 Upper Courtyard.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\5. Courtyard\OL_04 Drop to Chris.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\5. Courtyard\OL_05 Drop After Ledge.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\5. Courtyard\OL_06 Run to Female Ward.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\6. FemaleWard\OL_01 Female Ward Start.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\6. FemaleWard\OL_02 Laundry Room.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\6. FemaleWard\OL_03 Open Door to 2nd Floor.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\6. FemaleWard\OL_04 Fuse Room.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\6. FemaleWard\OL_05 Fuses Done.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\6. FemaleWard\OL_06 Grab 3rd Floor Key.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\6. FemaleWard\OL_07 Unlock 3rd Floor Door.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\6. FemaleWard\OL_08 Falling Floor Room.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\6. FemaleWard\OL_09 Room With Twins.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\6. FemaleWard\OL_10 Escaped Twins.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\6. FemaleWard\OL_11 Lost Camera.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\6. FemaleWard\OL_12 Pick Up Camera.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\6. FemaleWard\OL_13 Climbed into Bathroom.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\6. FemaleWard\OL_14 Run to Return to Admin.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\6. FemaleWard\OL_15 Big Jump.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\7. ReturnToAdministrationBlock\OL_01 Revist Start.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\7. ReturnToAdministrationBlock\OL_02 Drop From Vent.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\7. ReturnToAdministrationBlock\OL_03 Game Room.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\7. ReturnToAdministrationBlock\OL_04 Enter Theater.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\7. ReturnToAdministrationBlock\OL_05 Grab 3rd Floor Key.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\7. ReturnToAdministrationBlock\OL_06 Unlock Door.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\7. ReturnToAdministrationBlock\OL_07 Reach 3rd Floor.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\7. ReturnToAdministrationBlock\OL_08 Room With Praying Guy.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\7. ReturnToAdministrationBlock\OL_09 Hallway Before Father Martin.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\7. ReturnToAdministrationBlock\OL_10 Father Martin Death Cutscene Done.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\7. ReturnToAdministrationBlock\OL_11 Chris Runs At You.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\7. ReturnToAdministrationBlock\OL_12 Before Elevator.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\8. UndergroundLab\OL_01 Lab Start.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\8. UndergroundLab\OL_02  Wernicke Hallway.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\8. UndergroundLab\OL_03 Bush Checkpoint.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\8. UndergroundLab\OL_04 Alarm.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\8. UndergroundLab\OL_05 Chris Dead.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\8. UndergroundLab\OL_06 Speech Done.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\8. UndergroundLab\OL_07 Hallway After Wernicke.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\8. UndergroundLab\OL_08 Decontamination.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\8. UndergroundLab\OL_09 Enter Big Room.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\8. UndergroundLab\OL_10 Enter Valve Room.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\8. UndergroundLab\OL_11 Turn Valve.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\8. UndergroundLab\OL_12 Enter Tall Room.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\8. UndergroundLab\OL_13 Top of Tall Room.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\8. UndergroundLab\OL_14 Pulled Wires.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\MainGame\8. UndergroundLab\OL_15 Run To End Game.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\1. Hospital\OL_01 Free From Chair.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\1. Hospital\OL_02 Leave Room.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\1. Hospital\OL_03 Climb into Vent.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\1. Hospital\OL_04 Drop From Vent.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\1. Hospital\OL_05 Doctors and Liars.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\1. Hospital\OL_06 Run to Frank.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\1. Hospital\OL_07 Open Door.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\1. Hospital\OL_08 Grab Handcuff Key.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\1. Hospital\OL_09 Run to Handcuff Door.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\1. Hospital\OL_10 Handcuff Door.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\1. Hospital\OL_11 In Furnace.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\1. Hospital\OL_12 Escaped Furnace.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\1. Hospital\OL_13 Dropped From Vent.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\1. Hospital\OL_14 Frank Infront of You.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\1. Hospital\OL_15 Escaped Frank.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\1. Hospital\OL_16 Guy Asks To Turn off Gas.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\1. Hospital\OL_17 Vault Over Bed In Hallway.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\1. Hospital\OL_18 Fall onto Bed.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\1. Hospital\OL_19 Enter Gas Room.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\1. Hospital\OL_20 Turn off Gas.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\1. Hospital\OL_21 Run Outside.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\1. Hospital\OL_21 Transition To Outside.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\2. RecreationArea\OL_01 Enter Recreation Area.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\2. RecreationArea\OL_02 Guys Running Away.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\2. RecreationArea\OL_03 Climbed Ladder.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\2. RecreationArea\OL_04 Basketball Area.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\2. RecreationArea\OL_05 Top of 2nd Ladder.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\3. PrisonWhistleblower\OL_01 Prison Whistleblower Start.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\3. PrisonWhistleblower\OL_02 Chris Breaks Door.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\3. PrisonWhistleblower\OL_03 Emergency Evacuation.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\3. PrisonWhistleblower\OL_04 Fall Down Hole.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\3. PrisonWhistleblower\OL_05 Chris Chase.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\4. DryingGround\OL_01 Drying Ground Start.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\4. DryingGround\OL_02 After Water.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\4. DryingGround\OL_03 Pull Lever 1st Time.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\4. DryingGround\OL_04 Pull Lever 2nd TIme.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\4. DryingGround\OL_05 Escaped Varient.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\4. DryingGround\OL_06 In Tower.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\4. DryingGround\OL_07 Top of The Tower.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\5. VocationalBlock\OL_01 Vocational Block Start.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\5. VocationalBlock\OL_02 Rats in The Walls.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\5. VocationalBlock\OL_03 There He Is.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\5. VocationalBlock\OL_04 Running To Eddie.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\5. VocationalBlock\OL_05 Meet Eddie.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\5. VocationalBlock\OL_06 Escaped Eddie 1st Time.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\5. VocationalBlock\OL_07 Push Object Out of Way.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\5. VocationalBlock\OL_08 After Elevator Cutscene.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\5. VocationalBlock\OL_09 Out of Elevator.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\5. VocationalBlock\OL_10 Eddie Torture Cutscene.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\5. VocationalBlock\OL_11 Eddie Torture Cutscene Done.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\5. VocationalBlock\OL_12 Vault Out Window.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\5. VocationalBlock\OL_13 Find the Key.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\5. VocationalBlock\OL_14 Drop Into Gym.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\5. VocationalBlock\OL_15 Running To Key.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\5. VocationalBlock\OL_16 Pick Up Key.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\5. VocationalBlock\OL_17 Escaped Eddie Again.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\5. VocationalBlock\OL_18 Eddie Death Cutscene.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\5. VocationalBlock\OL_19 Eddie Death Cutscene Start.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\6. Exit\OL_01 Exit Start.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveData\Whistleblower\6. Exit\OL_02 Hallway.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="README.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveManager-Mods\AllDoorsUnlocked\Config\DefaultEngine.ini">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveManager-Mods\AllDoorsUnlocked\Config\DefaultGame.ini">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveManager-Mods\AllDoorsUnlocked\Config\DefaultUI.ini">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveManager-Mods\AllDoorsUnlocked\Content\AllDoorsUnlocked.OLScript">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveManager-Mods\BorderlessWindow\32\dinput8.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveManager-Mods\BorderlessWindow\32\LICENSE.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveManager-Mods\BorderlessWindow\64\dinput8.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveManager-Mods\BorderlessWindow\64\LICENSE.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveManager-Mods\EnemyToggle32.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveManager-Mods\EnemyToggle64.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveManager-Mods\HitBoxChanger32.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveManager-Mods\HitBoxChanger64.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveManager-Mods\Macca\Config\DefaultGame.ini">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveManager-Mods\Macca\Config\DefaultUI.ini">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveManager-Mods\NightVision32.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveManager-Mods\NightVision64.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveManager-Mods\SuperJump\Config\DefaultGame.ini">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveManager-Mods\SuperJump\Config\DefaultUI.ini">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveManager-Mods\Vanilla\Config\DefaultEngine.ini">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveManager-Mods\Vanilla\Config\DefaultGame.ini">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SaveManager-Mods\Vanilla\Config\DefaultUI.ini">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
