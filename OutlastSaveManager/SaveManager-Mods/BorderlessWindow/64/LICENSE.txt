@@ -1,7 +1,7 @@
-﻿This folder contains the "SpeedrunHelper" mod by lanylow.
+﻿This folder contains the "Outlast Borderless Window" mod by lanylow.
 
-Source: https://github.com/lanylow/outlast-speedrun-helper
+Source: https://github.com/lanylow/outlast-borderless-window
 License: GNU GPL-3.0
 
-The outlast-speedrun-helper.exe file is unmodified and redistributed in compliance with the GPL-3.0 license.
+The dinput8.dll file is unmodified and redistributed in compliance with the GPL-3.0 license.
 The source code of the mod is available at the link above.

@@ -94,7 +94,7 @@ Displays credits in the console.
 
 Shows a PayPal QR code if you’d like to support my work.
 
-Writing this tool took approximately 12–14 hours — even €1 for a coffee is highly appreciated. 😊
+Writing this tool took approximately 20–28 hours — even €1 for a coffee is highly appreciated. 😊
 
 
 ### ⚙️ Settings

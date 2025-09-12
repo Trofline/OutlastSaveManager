@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "OutlastSaveManager": {
-      "commandName": "Project",
-      "workingDirectory": "G:\\SteamLibrary\\steamapps\\common\\Outlast\\SaveManager"
-    }
-  }
-}
