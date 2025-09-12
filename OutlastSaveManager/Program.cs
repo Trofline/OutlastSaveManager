@@ -24,17 +24,18 @@ namespace OutlastSaveManager
         [STAThread]
         static void Main(string[] args)
         {
+            // habe das in Funktionalem Stil geschrieben, die Originalfassung hat mir mein funktionalliebendes Programmierherz gebrochen... :)
             if (!prop.Default.externalModPackage)
             {
-                string prefix = "BetterOutlastLauncher";
-
-                var matches = Process.GetProcesses()
-                             .Where(p => p.ProcessName.StartsWith(prefix, StringComparison.OrdinalIgnoreCase))
-                             .ToList();
-
-                if (matches.Any())
+                if (Process.GetProcesses()
+                          .Any(p => p.ProcessName.StartsWith("BetterOutlastLauncher", StringComparison.OrdinalIgnoreCase)))
                 {
-                    MessageBox.Show("If you run the SaveManager with InternalPackages,\nplease dont use the BetterOutlastLauncher\nto avoid the tools conflicting with each other!","Warning");
+                    MessageBox.Show(
+                        "If you run the SaveManager with InternalPackages,\n" +
+                        "please dont use the BetterOutlastLauncher\n" +
+                        "to avoid the tools conflicting with each other!",
+                        "Warning"
+                    );
                 }
             }
 
