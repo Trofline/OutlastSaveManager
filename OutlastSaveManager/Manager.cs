@@ -50,6 +50,7 @@ namespace OutlastSaveManager
         private Timer overlayTimer;
         private bool isDebugledge;
         private bool gamespeedValue = false;
+        private bool hitboxnormalBool = true;
 
         // -> Insert after your HOTKEY_ID_* constants
         // ---------------- Hotkey-Management ----------------
@@ -250,10 +251,10 @@ namespace OutlastSaveManager
         //push and upload on github,update version.txt in github
         //------------------------------------------------------------------------------------------------------
 
-        private static string LocalVersion = "2.2.2";
+        private static string LocalVersion = "2.2.5";
         private void changelogs()
         {
-            AddInfoLog("You can now make your own Keybindings!\nCheck out the new features in mods and settings section\nRead the README.md for further information\n");
+            AddInfoLog("Most of the new features are only useable via Hotkeys!\nIf you got more ideas or any bug, just text me on discord\nRead the README.md for further information\n");
         }
         public Manager()
         {
@@ -1421,10 +1422,11 @@ namespace OutlastSaveManager
 
         public void noDamage()
         {
+            isNoDamage = !isNoDamage;
+
             if (prop.Default.externalModPackage)
             {
 
-                isNoDamage = !isNoDamage;
 
                 if (checkBit64())
                 {
@@ -1487,6 +1489,14 @@ namespace OutlastSaveManager
                 File.WriteAllText(commandsCFG, "NoDamage");
                 forehook();
                 SimulateKey();
+                if (isNoDamage)
+                {
+                    ShowOverlay("NoDamage", "NoDamage");
+                }
+                else
+                {
+                    HideOverlay("NoDamage");
+                }
             }
         }
 
@@ -3424,7 +3434,16 @@ namespace OutlastSaveManager
             }
             else
             {
+                if (enemyToggle)
+                {
+                    ShowOverlay("FreezeEnemy", "FreezeEnemy");
+                }
+                else
+                {
+                    HideOverlay("FreezeEnemy");
+                }
                 File.WriteAllText(commandsCFG, $"FreezeEnemy {enemyToggle.ToString().ToLower()}");
+                forehook();
                 SimulateKey();
             }
             
@@ -3563,6 +3582,13 @@ namespace OutlastSaveManager
             SimulateKey();
             nopping = "nop";
             nopHitbox();
+
+            hitboxnormalBool = true;
+
+            HideOverlay("VaultHitbox");
+            HideOverlay("DoorHitbox");
+            HideOverlay("ShimmyHitbox");
+            
         }
         public void hiboxvault()
         {
@@ -3570,6 +3596,11 @@ namespace OutlastSaveManager
             forehook();
             SimulateKey();
             nopHitbox();
+            hitboxnormalBool = false;
+
+            HideOverlay("DoorHitbox");
+            HideOverlay("ShimmyHitbox");
+            ShowOverlay("VaultHitbox","VaultHitbox");
         }
         public void hitboxdoor()
         {
@@ -3577,6 +3608,11 @@ namespace OutlastSaveManager
             forehook();
             SimulateKey();
             nopHitbox();
+            hitboxnormalBool = false;
+
+            HideOverlay("VaultHitbox");
+            HideOverlay("ShimmyHitbox");
+            ShowOverlay("DoorHitbox", "DoorHitbox");
         }
         public void hitboxshimmy()
         {
@@ -3584,6 +3620,12 @@ namespace OutlastSaveManager
             forehook();
             SimulateKey();
             nopHitbox();
+            
+            hitboxnormalBool = false;
+
+            HideOverlay("DoorHitbox");
+            HideOverlay("VaultHitbox");
+            ShowOverlay("ShimmyHitbox", "ShimmyHitbox");
         }
         [DllImport("user32.dll")]
         static extern bool SetForegroundWindow(IntPtr hWnd);

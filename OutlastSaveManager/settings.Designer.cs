@@ -101,9 +101,9 @@
             shortcutsChk.AutoSize = true;
             shortcutsChk.Location = new Point(12, 237);
             shortcutsChk.Name = "shortcutsChk";
-            shortcutsChk.Size = new Size(113, 19);
+            shortcutsChk.Size = new Size(166, 19);
             shortcutsChk.TabIndex = 8;
-            shortcutsChk.Text = "Create Shortcuts";
+            shortcutsChk.Text = "Shortcuts in Outlast Folder";
             toolTip1.SetToolTip(shortcutsChk, "Creates shortcuts for quick starting in the Outlast root folder\r\n");
             shortcutsChk.UseVisualStyleBackColor = true;
             shortcutsChk.CheckedChanged += shortcuts_CheckedChanged;

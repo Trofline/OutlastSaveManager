@@ -16,20 +16,20 @@
 > -  To boot (if outlast is already open) just open `SaveManager`, otherwise there will be automaticaly
 >  	 shortcuts in the outlast root folder created for you, where you can then start with mods directly or just vanilla...
 > -  Inside of the folder `Boot`, you can put shortcuts of programs/websites/folder... in. The programm will run everything inside of there; Go to settings and open it up there
-	 Folder will be created, once the program is started the first time
 > -  Make sure to have the mod `Borderless Window Mod` in the settings enabled, to avoid tabbing out from [Toggle Window]
 > -  Make sure NOT to rename ANYTHING from the SaveManager, or it might not work anymore
 > -  Some of the mods you will have to re-enable after s+q (looking out for a fix in the future)
-> -  If you have External Mods enabled, make sure to not boot anything except the Vanilla, so dont run "run with other program.bat"
+> -  If you have External Mods enabled, and booted the Manager together with another program, some mods could have a conflict with the other tool
 > -  Some mods/keybinds will only work with Internal Mods, so have External Mods disabled!
 > -  You can hover over almost everything to see what its doing
+> -  Make keybinds for SpeedrunHelper (btw. it keeps the checkpoints after closing the game)
 
 ### Changelog
 
 > -  This a hella big update, I tested everything I could possibly think of, but if you find any bugs please report them in the help section
-> -  SaveManager boots without BetterOutlastLauncher, you can still use the RunWithOtherProgram.bat to start it with BetterOutlastLauncher or any other tool you want
->	 Just make sure to disable some settings in the SaveManager like (speedrunhelper,32bit,smoothmouse,borderlesswindow,61.81fps) and enable some settings in the 
->    BetterOutlastLauncher (borderlesswindow, close on launch, and make sure launch with steam is disabled)
+> -  Most of the new features are only useable via Hotkeys.
+> -  If you got more ideas, just text me on discord
+
 
 ### 📂 Loaded Checkpoints
 

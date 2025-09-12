@@ -46,14 +46,37 @@ namespace OutlastSaveManager
                 CreateShortcutInParent("AllDoorsUnlocked", "alldoorsunlocked");
                 CreateShortcutInParent("SaveManager");
 
-                if (!File.Exists(Path.Combine(startupPath, "RunWithOtherProgram.bat")))
-                {
-                    File.Move(Path.Combine(startupPath, "SaveManager", "RunWithOtherProgram.bat"), Path.Combine(startupPath, "RunWithOtherProgram.bat"), true);
-                }
+                //if (!File.Exists(Path.Combine(startupPath, "RunWithOtherProgram.bat")))
+                //{
+                //    File.Move(Path.Combine(startupPath, "SaveManager", "RunWithOtherProgram.bat"), Path.Combine(startupPath, "RunWithOtherProgram.bat"), true);
+                //}
             }
             else
             {
-                removeShortcuts();
+                CreateShortcutInCurrent("Vanilla", "vanilla");
+                CreateShortcutInCurrent("Macca%", "macca");
+                CreateShortcutInCurrent("SuperJump", "superjump");
+                CreateShortcutInCurrent("AllDoorsUnlocked", "alldoorsunlocked");
+                CreateShortcutInCurrent("SaveManager");
+                try
+                {
+                    File.Delete(Path.Combine(startupPath, "AllDoorsUnlocked.ink"));
+                    File.Delete(Path.Combine(startupPath, "SuperJump.ink"));
+                    File.Delete(Path.Combine(startupPath, "Macca%.ink"));
+                    File.Delete(Path.Combine(startupPath, "Vanilla.ink"));
+                    File.Delete(Path.Combine(startupPath, "SaveManager.ink"));
+                    File.Delete(Path.Combine(startupPath, "RunWithOtherProgram.bat"));
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+
+                //if (!File.Exists(Path.Combine(startupPath, "RunWithOtherProgram.bat")))
+                //{
+                //    File.Move(Path.Combine(startupPath, "SaveManager", "RunWithOtherProgram.bat"), Path.Combine(startupPath, "RunWithOtherProgram.bat"), true);
+                //}
             }
             try
             {
@@ -466,6 +489,32 @@ namespace OutlastSaveManager
 
             // Eine Ebene höher
             string parentFolder = Directory.GetParent(exeFolder).FullName;
+
+            // Pfad zur .lnk-Datei
+            string shortcutPath = Path.Combine(parentFolder, shortcutName + ".lnk");
+
+            // COM-Objekt WScript.Shell
+            Type t = Type.GetTypeFromProgID("WScript.Shell");
+            dynamic shell = Activator.CreateInstance(t);
+
+            // Verknüpfung erstellen
+            var shortcut = shell.CreateShortcut(shortcutPath);
+            shortcut.TargetPath = exePath;
+            shortcut.WorkingDirectory = exeFolder;
+            shortcut.Arguments = arguments; // Parameter
+            shortcut.Description = $"Boots {shortcutName} with arguments {arguments}";
+            shortcut.IconLocation = exePath + ",0";
+            shortcut.Save();
+        }
+        public static void CreateShortcutInCurrent(string shortcutName, string arguments = "")
+        {
+            // Pfad zur EXE
+            string exeFolder = Directory.GetCurrentDirectory();
+            string exePath = Path.Combine(exeFolder, "OutlastSaveManager.exe");
+
+            // Eine Ebene höher
+            string parentFolder = Directory.GetParent(exeFolder).FullName;
+            parentFolder = Path.Combine(parentFolder ,"SaveManager");
 
             // Pfad zur .lnk-Datei
             string shortcutPath = Path.Combine(parentFolder, shortcutName + ".lnk");
