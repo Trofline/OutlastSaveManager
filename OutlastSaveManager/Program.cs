@@ -275,17 +275,17 @@ namespace OutlastSaveManager
 
             here:
 
-                if (Path.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "SaveManager/FirstRun")))
+                if (!Path.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "SaveManager/FirstRun")))
                 {
-                    firstRunBool = false;
+                    firstRunBool = true;
                 }
                 else
                 {
-                    Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "SaveManager/FirstRun"));
-                    firstRunBool = true;
+                    //Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "SaveManager/FirstRun"));
+                    firstRunBool = false;
                 }
 
-                if (firstRunBool == true)
+                if (firstRunBool == false)
                 {
                     copyBackToStart();
                     Application.Run(new firstRun());
@@ -361,7 +361,7 @@ namespace OutlastSaveManager
                 throw;
             }
         }
-
+        
 
         private static void iniCheck()
         {
