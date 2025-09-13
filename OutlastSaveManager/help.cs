@@ -22,9 +22,14 @@ namespace OutlastSaveManager
 
         private void permission_Click(object sender, EventArgs e)
         {
-            if (Path.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "SaveManager/FirstRun")))
+            if (!Path.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "SaveManager/FirstRun")))
             {
-                Directory.Delete(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "SaveManager/FirstRun"));
+                var olgameproc = Process.GetProcessesByName("OLGame");
+                foreach (var item in olgameproc)
+                {
+                    item.Kill();
+                }
+                Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "SaveManager/FirstRun"));
                 Application.Restart();
             }
             else

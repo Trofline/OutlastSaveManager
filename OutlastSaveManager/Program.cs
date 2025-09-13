@@ -281,12 +281,18 @@ namespace OutlastSaveManager
                 }
                 else
                 {
-                    //Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "SaveManager/FirstRun"));
+                    Directory.Delete(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "SaveManager/FirstRun"));
                     firstRunBool = false;
                 }
 
                 if (firstRunBool == false)
                 {
+                    var olgameproc = Process.GetProcessesByName("OLGame");
+                    foreach (var item in olgameproc)
+                    {
+                        item.Kill();
+                    }
+
                     copyBackToStart();
                     Application.Run(new firstRun());
                 }
@@ -304,9 +310,6 @@ namespace OutlastSaveManager
                     }
                     Application.Run(new Manager());
                 }
-
-
-
 
             }
             catch (Exception e)

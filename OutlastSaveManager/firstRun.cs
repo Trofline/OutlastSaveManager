@@ -34,6 +34,11 @@ namespace OutlastSaveManager
             }
             else
             {
+                var olgamrproc = Process.GetProcessesByName("OLGame");
+                foreach (var item in olgamrproc)
+                {
+                    item.Kill();
+                }
                 Program.firstRunBool = false;
                 Application.Restart();
                 this.Close();
