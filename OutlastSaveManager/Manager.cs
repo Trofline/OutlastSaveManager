@@ -251,7 +251,7 @@ namespace OutlastSaveManager
         //push and upload on github,update version.txt in github
         //------------------------------------------------------------------------------------------------------
 
-        private static string LocalVersion = "2.2.6";
+        private static string LocalVersion = "2.2.8";
         private void changelogs()
         {
             AddInfoLog("Most of the new features are only useable via Hotkeys!\nIf you got more ideas or any bug, just text me on discord\nRead the README.md for further information\n");
