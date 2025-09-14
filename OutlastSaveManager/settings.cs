@@ -308,11 +308,10 @@ namespace OutlastSaveManager
 
         private void disKey_CheckedChanged(object sender, EventArgs e)
         {
-            manager.DisableHotkeys();
-
-
-                prop.Default.speedrun = disKey.Checked;
+            prop.Default.speedrun = disKey.Checked;
             prop.Default.Save();
+
+            manager.DisableHotkeys();
         }
     }
 

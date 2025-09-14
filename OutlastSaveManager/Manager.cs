@@ -476,7 +476,7 @@ namespace OutlastSaveManager
             string targetProcess = "OLGame"; // Outlast.exe ohne .exe
 
             _focusTimer = new Timer();
-            _focusTimer.Interval = 1000; // alle 500ms prüfen
+            _focusTimer.Interval = 1000; // alle 1000ms prüfen
             _focusTimer.Tick += (s, e) =>
             {
                 IntPtr hwnd = GetForegroundWindow();
@@ -497,7 +497,14 @@ namespace OutlastSaveManager
 
                 if (focused && !hotkeysRegistered)
                 {
-                    RegisterAllHotkeys();
+                    if (prop.Default.speedrun)
+                    {
+                        DisableHotkeys();
+                    }
+                    else
+                    {
+                        RegisterAllHotkeys();
+                    }
                     hotkeysRegistered = true;
                 }
                 else if (!focused && hotkeysRegistered)
@@ -3691,17 +3698,16 @@ namespace OutlastSaveManager
                 UnregisterAllHotkeys();
                 foreach (var kv in currentHotkeys)
                 {
-                    if (kv.Value == 1)
-                    {
-                        return;
-                    }
                     string action = kv.Key;
                     string hk = kv.Value?.Trim();
 
                     if (string.IsNullOrEmpty(hk)) continue; // skip empty entries (no default!)
 
                     if (!actionToId.TryGetValue(action, out int id)) continue; // unknown action -> skip
-
+                    if (id > 9020 || id < 9000 )
+                    {
+                        continue;
+                    }
                     var (mods, key) = ParseHotkey(hk);
                     if (key == Keys.None) continue; // invalid parse -> skip
 
@@ -3717,6 +3723,7 @@ namespace OutlastSaveManager
                     {
                         AddErrorLog($"RegisterHotKey failed for {action}: {ex.Message}");
                     }
+                    
                 }
             }
             else
