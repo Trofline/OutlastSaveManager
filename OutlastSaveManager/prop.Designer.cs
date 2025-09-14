@@ -166,5 +166,17 @@ namespace OutlastSaveManager {
                 this["hitboxChange"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool speedrun {
+            get {
+                return ((bool)(this["speedrun"]));
+            }
+            set {
+                this["speedrun"] = value;
+            }
+        }
     }
 }

@@ -46,6 +46,7 @@
             smhkBtn = new Button();
             bootBtn = new Button();
             button1 = new Button();
+            disKey = new CheckBox();
             SuspendLayout();
             // 
             // minimizeChk
@@ -191,7 +192,7 @@
             // 
             // smhkBtn
             // 
-            smhkBtn.Location = new Point(53, 386);
+            smhkBtn.Location = new Point(55, 399);
             smhkBtn.Name = "smhkBtn";
             smhkBtn.Size = new Size(180, 23);
             smhkBtn.TabIndex = 9;
@@ -201,7 +202,7 @@
             // 
             // bootBtn
             // 
-            bootBtn.Location = new Point(53, 357);
+            bootBtn.Location = new Point(55, 370);
             bootBtn.Name = "bootBtn";
             bootBtn.Size = new Size(180, 23);
             bootBtn.TabIndex = 10;
@@ -211,7 +212,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(53, 328);
+            button1.Location = new Point(55, 341);
             button1.Name = "button1";
             button1.Size = new Size(180, 23);
             button1.TabIndex = 15;
@@ -219,11 +220,24 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += restartgame_click;
             // 
+            // disKey
+            // 
+            disKey.AutoSize = true;
+            disKey.Location = new Point(12, 312);
+            disKey.Name = "disKey";
+            disKey.Size = new Size(115, 19);
+            disKey.TabIndex = 16;
+            disKey.Text = "Disable Keybinds";
+            toolTip1.SetToolTip(disKey, "Imagine you press while speedrunning the freecam keybind o.o");
+            disKey.UseVisualStyleBackColor = true;
+            disKey.CheckedChanged += disKey_CheckedChanged;
+            // 
             // settings
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(286, 421);
+            ClientSize = new Size(286, 434);
+            Controls.Add(disKey);
             Controls.Add(button1);
             Controls.Add(lockHitboxChk);
             Controls.Add(shCameraChk);
@@ -267,5 +281,6 @@
         private CheckBox shCameraChk;
         private CheckBox lockHitboxChk;
         private Button button1;
+        private CheckBox disKey;
     }
 }

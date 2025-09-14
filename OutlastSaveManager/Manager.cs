@@ -25,7 +25,7 @@ namespace OutlastSaveManager
         [DllImport("kernel32.dll", SetLastError = true)]
         static extern bool IsWow64Process(IntPtr hProcess, out bool lpSystemInfo);
         [DllImport("user32.dll")]
-        private static extern bool UnregisterHotKey(IntPtr hWnd, int id);
+        internal static extern bool UnregisterHotKey(IntPtr hWnd, int id);
         [DllImport("user32.dll")] private static extern bool ReleaseCapture();
 
         [DllImport("user32.dll", SetLastError = true)]
@@ -62,6 +62,7 @@ namespace OutlastSaveManager
         // action -> hotkey id (muss zu deinen vorhandenen switch-cases passen)
         private readonly Dictionary<string, int> actionToId = new Dictionary<string, int>
 {
+    {"PlayerInfo", HOTKEY_playerinfo},
     {"Show GameMarkers", HOTKEY_gamemarkers},
     {"ReloadCheckpoint", HOTKEY_reloadcheckpoint},
     {"Reset Collactibles", HOTKEY_removecollactibles},
@@ -169,7 +170,7 @@ namespace OutlastSaveManager
         private const int HOTKEY_Exit = 9043;
         private const int HOTKEY_ShowDebug = 9044;
         private const int HOTKEY_Paths = 9045;
-        private const int HOTKEY_PlayerInfo = 9046;
+        private const int HOTKEY_playerinfo = 9046;
         private const int HOTKEY_gamemarkers = 9047;
         private const int HOTKEY_meshedges= 9048;
         private const int HOTKEY_bounds= 9049;
@@ -1335,8 +1336,9 @@ namespace OutlastSaveManager
                         File.WriteAllText(commandsCFG, "Show Paths");
                         SimulateKey();
                         break;
-                    case HOTKEY_PlayerInfo:
-                        //TODO
+                    case HOTKEY_playerinfo:
+                        File.WriteAllText(commandsCFG, "playerinfo");
+                        SimulateKey();
                         break;
                     case HOTKEY_staticmeshes:
                         File.WriteAllText(commandsCFG, "Show STATICMESHES");
@@ -1410,6 +1412,10 @@ namespace OutlastSaveManager
         private const int KEYEVENTF_KEYUP = 0x0002;
         public static void SimulateKey()
         {
+
+            if (prop.Default.speedrun)
+                return;
+            
             // 0-Taste auf der Haupttastatur = 0x30
             byte key = 0xA1;
 
@@ -2439,7 +2445,7 @@ namespace OutlastSaveManager
             UnregisterHotKey(this.Handle, HOTKEY_F4);
             UnregisterHotKey(this.Handle, HOTKEY_ShowCollision);
             UnregisterHotKey(this.Handle, HOTKEY_Paths); 
-            UnregisterHotKey(this.Handle, HOTKEY_PlayerInfo);
+            UnregisterHotKey(this.Handle, HOTKEY_playerinfo);
             UnregisterHotKey(this.Handle, HOTKEY_gamemarkers);
             UnregisterHotKey(this.Handle, HOTKEY_meshedges);
             UnregisterHotKey(this.Handle, HOTKEY_bounds);
@@ -3675,6 +3681,48 @@ namespace OutlastSaveManager
 
                     Process process = Process.Start(psi);
                 }
+            }
+        }
+
+        internal void DisableHotkeys()
+        {
+            if (prop.Default.speedrun)
+            {
+                UnregisterAllHotkeys();
+                foreach (var kv in currentHotkeys)
+                {
+                    if (kv.Value == 1)
+                    {
+                        return;
+                    }
+                    string action = kv.Key;
+                    string hk = kv.Value?.Trim();
+
+                    if (string.IsNullOrEmpty(hk)) continue; // skip empty entries (no default!)
+
+                    if (!actionToId.TryGetValue(action, out int id)) continue; // unknown action -> skip
+
+                    var (mods, key) = ParseHotkey(hk);
+                    if (key == Keys.None) continue; // invalid parse -> skip
+
+                    try
+                    {
+                        bool ok = RegisterHotKey(this.Handle, id, mods, key);
+                        if (ok)
+                            registeredHotkeyIds.Add(id);
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        AddErrorLog($"RegisterHotKey failed for {action}: {ex.Message}");
+                    }
+                }
+            }
+            else
+            {
+                UnregisterAllHotkeys();
+                RegisterAllHotkeys();
             }
         }
     }

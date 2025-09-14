@@ -41,6 +41,7 @@ namespace OutlastSaveManager
             internalModPackageChk.CheckedChanged -= internalModPackageChk_CheckedChanged;
             shCameraChk.CheckedChanged -= shCameraChk_CheckedChanged;
             lockHitboxChk.CheckedChanged -= lockHitboxChk_CheckedChanged;
+            disKey.CheckedChanged -= disKey_CheckedChanged;
 
 
             minimizeChk.Checked = prop.Default.minimizedBoot;
@@ -55,6 +56,7 @@ namespace OutlastSaveManager
             internalModPackageChk.Checked = prop.Default.externalModPackage;
             shCameraChk.Checked = prop.Default.shCamera;
             lockHitboxChk.Checked = prop.Default.hitboxChange;
+            disKey.Checked = prop.Default.speedrun;
 
 
             // Events wieder anmelden
@@ -70,6 +72,7 @@ namespace OutlastSaveManager
             internalModPackageChk.CheckedChanged += internalModPackageChk_CheckedChanged;
             shCameraChk.CheckedChanged += shCameraChk_CheckedChanged;
             lockHitboxChk.CheckedChanged += lockHitboxChk_CheckedChanged;
+            disKey.CheckedChanged += disKey_CheckedChanged;
         }
 
         private void settings_Load(object sender, EventArgs e)
@@ -301,6 +304,15 @@ namespace OutlastSaveManager
         {
             userChecked = true;
             RestartApplication2();
+        }
+
+        private void disKey_CheckedChanged(object sender, EventArgs e)
+        {
+            manager.DisableHotkeys();
+
+
+                prop.Default.speedrun = disKey.Checked;
+            prop.Default.Save();
         }
     }
 
