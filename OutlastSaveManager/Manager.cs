@@ -62,6 +62,8 @@ namespace OutlastSaveManager
         // action -> hotkey id (muss zu deinen vorhandenen switch-cases passen)
         private readonly Dictionary<string, int> actionToId = new Dictionary<string, int>
 {
+    {"Set Speedrun start", HOTKEY_saveCheckpoint},
+    {"Load Speedrun start", HOTKEY_loadCheckpoint},
     {"PlayerInfo", HOTKEY_playerinfo},
     {"Show GameMarkers", HOTKEY_gamemarkers},
     {"ReloadCheckpoint", HOTKEY_reloadcheckpoint},
@@ -92,6 +94,10 @@ namespace OutlastSaveManager
     {"FreezeEnemy", HOTKEY_FreezeEnemy},
     {"NoDamage", HOTKEY_NoDamage},
     {"Rage Quit", HOTKEY_Exit},
+    {"Normal Hitbox", HOTKEY_Normal},
+    {"Vault Hitbox", HOTKEY_Vault},
+    {"Door Hitbox", HOTKEY_Door},
+    {"Shimmy Hitbox", HOTKEY_Shimmy},
     {"CheckpointSave1", HOTKEY_CTRL_F1},
     {"CheckpointSave2", HOTKEY_CTRL_F2},
     {"CheckpointSave3", HOTKEY_CTRL_F3},
@@ -183,7 +189,12 @@ namespace OutlastSaveManager
         private const int HOTKEY_removerecordings = 9056;
         private const int HOTKEY_removecollactibles = 9057;
         private const int HOTKEY_rsw = 9058;
-
+        private const int HOTKEY_loadCheckpoint = 9059;
+        private const int HOTKEY_Normal = 9060;
+        private const int HOTKEY_Vault = 9061;
+        private const int HOTKEY_Door = 9062;
+        private const int HOTKEY_Shimmy = 9063;
+        private const int HOTKEY_saveCheckpoint = 9064;
 
 
         private bool debugActive = false;
@@ -251,7 +262,7 @@ namespace OutlastSaveManager
         //push and upload on github,update version.txt in github
         //------------------------------------------------------------------------------------------------------
 
-        private static string LocalVersion = "2.2.8";
+        private static string LocalVersion = "2.2.9";
         private void changelogs()
         {
             AddInfoLog("Most of the new features are only useable via Hotkeys!\nIf you got more ideas or any bug, just text me on discord\nRead the README.md for further information\n");
@@ -609,6 +620,9 @@ namespace OutlastSaveManager
 
                 var (mods, key) = ParseHotkey(hk);
                 if (key == Keys.None) continue; // invalid parse -> skip
+
+                if (prop.Default.externalModPackage && id >= 9060 && id <= 9063)
+                    continue;
 
                 try
                 {
@@ -1399,8 +1413,29 @@ namespace OutlastSaveManager
                         break;
                     case HOTKEY_rsw:
                         externalwarning();
-                    File.WriteAllText(commandsCFG, "rsw");
+                        File.WriteAllText(commandsCFG, "rsw");
                         SimulateKey();
+                        break;
+                    case HOTKEY_loadCheckpoint:
+                        deleteEveryCheckpointExceptReadOnly();
+                        File.WriteAllText(commandsCFG,"loadcheckpoint");
+                        SimulateKey();
+                        break;
+                    case HOTKEY_saveCheckpoint:
+                        File.WriteAllText(commandsCFG, "savecheckpoint");
+                        SimulateKey();
+                        break;
+                    case HOTKEY_Normal:
+                        hitboxnormal();
+                        break;
+                    case HOTKEY_Vault:
+                        hiboxvault();
+                        break;
+                    case HOTKEY_Door:
+                        hitboxdoor();
+                        break;
+                    case HOTKEY_Shimmy:
+                        hitboxshimmy();
                         break;
                 }
             }
@@ -2464,6 +2499,12 @@ namespace OutlastSaveManager
             UnregisterHotKey(this.Handle, HOTKEY_removerecordings);
             UnregisterHotKey(this.Handle, HOTKEY_removecollactibles);
             UnregisterHotKey(this.Handle, HOTKEY_rsw);
+            UnregisterHotKey(this.Handle, HOTKEY_loadCheckpoint);
+            UnregisterHotKey(this.Handle, HOTKEY_Normal);
+            UnregisterHotKey(this.Handle, HOTKEY_Vault);
+            UnregisterHotKey(this.Handle, HOTKEY_Door);
+            UnregisterHotKey(this.Handle, HOTKEY_Shimmy);
+            UnregisterHotKey(this.Handle, HOTKEY_saveCheckpoint);
             StopDuplicationFixLoop();
 
             timer?.Change(Timeout.Infinite, Timeout.Infinite);
