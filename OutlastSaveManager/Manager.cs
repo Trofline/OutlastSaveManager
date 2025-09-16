@@ -3703,7 +3703,7 @@ namespace OutlastSaveManager
                     if (string.IsNullOrEmpty(hk)) continue; // skip empty entries (no default!)
 
                     if (!actionToId.TryGetValue(action, out int id)) continue; // unknown action -> skip
-                    if (id > 9020 || id < 9000 )
+                    if (id != 9000)
                     {
                         continue;
                     }
