@@ -26,6 +26,11 @@
 
 ### Changelog
 
+> -  Set and Load Speedrun Start is to load a checkpoint and set a checkpoint (the start of the category youre speedrunning for example. It deletes not neccessary save files for you and loads you into the checkpoint)
+> -  Reset Collactibles (resets the documents and records, so you dont have to reload)
+> -  Added Reset World (resets the world state so you dont have to reload,including interactables such as doors, boxes... and most of the cutscenes etc..) 
+> -  GameplayMarkers (shows markers, such as spots where you can vault, climb, squeeze, etc etc)
+> -  PlayerInfo (shows the player informations such as velocity, coordinates and camera viewment)
 > -  This a hella big update, I tested everything I could possibly think of, but if you find any bugs please report them in the help section
 > -  Most of the new features are only useable via Hotkeys.
 > -  If you got more ideas, just text me on discord
