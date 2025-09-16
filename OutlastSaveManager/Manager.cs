@@ -186,7 +186,6 @@ namespace OutlastSaveManager
 
 
 
-
         private bool debugActive = false;
         private bool isGamma10 = false;
         private bool isFreecam = false;
