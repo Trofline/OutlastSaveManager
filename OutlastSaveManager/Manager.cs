@@ -124,8 +124,6 @@ namespace OutlastSaveManager
     {"PresetSave7", HOTKEY_SavePreset_7},
     {"PresetSave8", HOTKEY_SavePreset_8},
     {"PresetSave9", HOTKEY_SavePreset_9}
-    
-
 };
 
         // track which ids are currently registered so we can unregister them later
@@ -1442,8 +1440,6 @@ namespace OutlastSaveManager
         }
 
 
-       
-    
 
 
 
@@ -3744,7 +3740,8 @@ namespace OutlastSaveManager
                     if (string.IsNullOrEmpty(hk)) continue; // skip empty entries (no default!)
 
                     if (!actionToId.TryGetValue(action, out int id)) continue; // unknown action -> skip
-                    if (id != 9000)
+
+                    if (id != 9000 && id != 9064 && id != 9059 && id != 0x0000 && id != 0x0002)
                     {
                         continue;
                     }

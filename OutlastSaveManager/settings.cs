@@ -280,7 +280,10 @@ namespace OutlastSaveManager
 
         private void internalModPackageChk_CheckedChanged(object sender, EventArgs e)
         {
-            MessageBox.Show("This option could potentionaly kill outlast after some time of use.\nI would recommend leaving it off, this is just if you want to load vanilla and speedrun,\nbut sometimes still use mods for a MINUTE OR TWO.\nThe longer you have the mods running, the higher is the risk of outlast crashing randomly later on.\nUsualy Memory Leaks(what crashes Outlast) happen after like 15 minutes+ of having the mods enabled\nIn settings is a restart game button, if you have used it more than 10-15 minutes...", "WARNING!!!");
+            if (prop.Default.externalModPackage == false)
+            {
+                MessageBox.Show("This option could potentionaly kill outlast after some time of use.\nI would recommend leaving it off, this is just if you want to load vanilla and speedrun,\nbut sometimes still use mods for a MINUTE OR TWO.\nThe longer you have the mods running, the higher is the risk of outlast crashing randomly later on.\nUsualy Memory Leaks(what crashes Outlast) happen after like 15 minutes+ of having the mods enabled\nIn settings is a restart game button, if you have used it more than 10-15 minutes...", "WARNING!!!");
+            }
             prop.Default.externalModPackage = internalModPackageChk.Checked;
             prop.Default.Save();
 
