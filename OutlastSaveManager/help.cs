@@ -14,6 +14,9 @@ namespace OutlastSaveManager
 {
     public partial class help : Form
     {
+        Manager manager;
+
+        
         public help()
         {
             InitializeComponent();
@@ -56,12 +59,15 @@ namespace OutlastSaveManager
 
         private void button3_Click(object sender, EventArgs e)
         {
-            string url = "https://github.com/Trofline/Tools/releases";
+            /*string url = "https://github.com/Trofline/Tools/releases";
             Process.Start(new ProcessStartInfo
             {
                 FileName = url,
                 UseShellExecute = true
-            });
+            });*/
+
+            manager.CheckAndUpdate();
+            MessageBox.Show("Already up to date");
         }
 
         private void help_Load(object sender, EventArgs e)
