@@ -16,7 +16,7 @@ namespace OutlastSaveManager
         private readonly Object _monitor = new();
         public event Action<String>? MessageReceived;
 
-        private void OnMessageReceived(String message) => MessageReceived?.Invoke(message);
+        private void OnMessageReceived(String message) => MessageReceived?.Invoke(message.Trim());
 
         public Communicator(int port) => _listener = new TcpListener(IPAddress.Loopback, port);
 

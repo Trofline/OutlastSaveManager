@@ -291,6 +291,19 @@ namespace OutlastSaveManager
             EnsureSaveFolderAccess();
             ApplyRoundedCorners(10);
 
+            Program.communicator.MessageReceived += MessageFired;
+
+        }
+
+        private void MessageFired(string msg)
+        {
+            switch (msg)
+            {
+                
+
+                default:
+                    break;
+            }
         }
 
         // -------------------------

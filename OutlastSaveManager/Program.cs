@@ -16,7 +16,7 @@ namespace OutlastSaveManager
         public static string startupPath = Directory.GetParent(Directory.GetCurrentDirectory()).FullName;
         private static string documentsFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
-
+        public static readonly Communicator communicator = new(1);
 
         public static string argumentStartedWith;
 
@@ -246,7 +246,6 @@ namespace OutlastSaveManager
 
                 if (args == null || args.Length == 0)
                 {
-
                     goto here;
                 }
 
@@ -272,6 +271,11 @@ namespace OutlastSaveManager
                 iniCheck();
                 internalPackages(!prop.Default.externalModPackage);
                 LaunchOLGame();
+
+                if (!prop.Default.externalModPackage)
+                {
+                    _ = communicator.AcceptConnects();
+                }
 
             here:
 
