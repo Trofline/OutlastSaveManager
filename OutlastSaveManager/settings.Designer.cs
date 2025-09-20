@@ -40,13 +40,13 @@
             shCameraChk = new CheckBox();
             fpsChk = new CheckBox();
             lockHitboxChk = new CheckBox();
+            disKey = new CheckBox();
             infoChk = new CheckBox();
             shChk = new CheckBox();
             smoothmouseChk = new CheckBox();
             smhkBtn = new Button();
             bootBtn = new Button();
             button1 = new Button();
-            disKey = new CheckBox();
             SuspendLayout();
             // 
             // minimizeChk
@@ -157,6 +157,18 @@
             lockHitboxChk.UseVisualStyleBackColor = true;
             lockHitboxChk.CheckedChanged += lockHitboxChk_CheckedChanged;
             // 
+            // disKey
+            // 
+            disKey.AutoSize = true;
+            disKey.Location = new Point(12, 312);
+            disKey.Name = "disKey";
+            disKey.Size = new Size(115, 19);
+            disKey.TabIndex = 16;
+            disKey.Text = "Disable Keybinds";
+            toolTip1.SetToolTip(disKey, "Imagine you press while speedrunning the freecam keybind o.o");
+            disKey.UseVisualStyleBackColor = true;
+            disKey.CheckedChanged += disKey_CheckedChanged;
+            // 
             // infoChk
             // 
             infoChk.AutoSize = true;
@@ -219,18 +231,6 @@
             button1.Text = "Restart Game";
             button1.UseVisualStyleBackColor = true;
             button1.Click += restartgame_click;
-            // 
-            // disKey
-            // 
-            disKey.AutoSize = true;
-            disKey.Location = new Point(12, 312);
-            disKey.Name = "disKey";
-            disKey.Size = new Size(115, 19);
-            disKey.TabIndex = 16;
-            disKey.Text = "Disable Keybinds";
-            toolTip1.SetToolTip(disKey, "Imagine you press while speedrunning the freecam keybind o.o");
-            disKey.UseVisualStyleBackColor = true;
-            disKey.CheckedChanged += disKey_CheckedChanged;
             // 
             // settings
             // 
