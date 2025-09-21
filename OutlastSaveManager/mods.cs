@@ -47,9 +47,26 @@ namespace OutlastSaveManager
 
             CenterFormOnScreen();
 
+            checkAndDisable();
 
 
         }
+
+        private void checkAndDisable()
+        {
+            if (prop.Default.externalModPackage)
+            {
+                materialButton15.Enabled = false;
+                materialButton14.Enabled = false;
+                materialButton13.Enabled = false;
+                materialButton18.Enabled = false;
+                materialButton24.Enabled = false;
+                materialButton26.Enabled = false;
+                materialButton21.Enabled = false;
+                materialButton19.Enabled = false;
+            }
+        }
+
         private void CenterFormOnScreen()
         {
             // Berechne Position basierend auf Arbeitsfläche des Primärbildschirms
