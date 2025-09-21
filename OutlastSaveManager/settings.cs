@@ -79,7 +79,7 @@ namespace OutlastSaveManager
             materialButton1.Size = new Size(157,36);
             materialButton2.Size = new Size(157,36);
             materialButton3.Size = new Size(157,36);
-
+            CenterFormOnScreen();
 
             // Manager-Instanz initialisieren
             manager = Manager.Instance;
@@ -132,7 +132,13 @@ namespace OutlastSaveManager
         }
 
 
-
+        private void CenterFormOnScreen()
+        {
+            // Berechne Position basierend auf Arbeitsfläche des Primärbildschirms
+            int x = (Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2;
+            int y = (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2;
+            this.Location = new Point(x, y);
+        }
 
         private void settings_Load(object sender, EventArgs e)
         {

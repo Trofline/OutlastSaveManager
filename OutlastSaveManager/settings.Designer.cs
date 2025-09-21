@@ -379,7 +379,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.FromArgb(33, 33, 33);
+            label1.BackColor = Color.Transparent;
             label1.Location = new Point(20, 6);
             label1.Name = "label1";
             label1.Size = new Size(49, 15);
@@ -391,7 +391,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
-            ClientSize = new Size(403, 835);
+            ClientSize = new Size(435, 913);
             Controls.Add(label1);
             Controls.Add(panel1);
             ForeColor = SystemColors.ControlLightLight;

@@ -35,21 +35,28 @@ namespace OutlastSaveManager
             Accent.Pink700,
             TextShade.WHITE
             );
+            buttonReSize();
 
+            this.Size = new Size(782, 573);
+            this.StartPosition = FormStartPosition.CenterScreen;
             this.MaximizeBox = false; // Maximieren-Button weg
             this.MinimizeBox = false; // Minimieren-Button weg
-            this.StartPosition = FormStartPosition.CenterScreen;
             this.Sizable = false;
-            this.Size = new Size(782, 573);
             label1.BackColor = Color.FromArgb(33, 33, 33);
             panel1.Size = new Size(800, 549);
 
+            CenterFormOnScreen();
 
-            buttonReSize();
 
 
         }
-
+        private void CenterFormOnScreen()
+        {
+            // Berechne Position basierend auf Arbeitsfläche des Primärbildschirms
+            int x = (Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2;
+            int y = (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2;
+            this.Location = new Point(x, y);
+        }
         private void buttonReSize()
         {
             materialButton1.AutoSize = false;

@@ -1068,11 +1068,12 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1022, 1158);
+            ClientSize = new Size(1038, 1197);
             Controls.Add(label1);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "mods";
+            Sizable = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Mods";
             TopMost = true;

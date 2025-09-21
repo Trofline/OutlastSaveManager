@@ -1109,7 +1109,7 @@ namespace OutlastSaveManager
                             this.Show();
                             this.Activate();
                             AddLog("Changed WindowState");
-                            ToggleMods();
+                            ToggleWindows();
                         }
                         else
                         {
@@ -1468,7 +1468,7 @@ namespace OutlastSaveManager
                         this.Show();
                         this.Activate();
                         AddLog("Changed WindowState");
-                        ToggleMods();
+                        ToggleWindows();
                     }
                     else
                     {
@@ -2494,11 +2494,11 @@ namespace OutlastSaveManager
             fadingOut = true;
             fadeTimer.Start();
 
-            ToggleMods();
+            ToggleWindows();
 
 
         }
-        private void ToggleMods()
+        private void ToggleWindows()
         {
             if (modsInstance != null && !modsInstance.IsDisposed)
             {
@@ -2513,6 +2513,51 @@ namespace OutlastSaveManager
                 {
                     // Wenn normal oder maximiert → minimieren
                     modsInstance.WindowState = FormWindowState.Minimized;
+                }
+            }
+            else if (settingsInstance != null && !settingsInstance.IsDisposed)
+            {
+                if (settingsInstance.WindowState == FormWindowState.Minimized)
+                {
+                    // Wenn minimiert → wieder normal
+                    settingsInstance.WindowState = FormWindowState.Normal;
+                    settingsInstance.Show();
+                    settingsInstance.BringToFront();
+                }
+                else
+                {
+                    // Wenn normal oder maximiert → minimieren
+                    settingsInstance.WindowState = FormWindowState.Minimized;
+                }
+            }
+            else if (helpInstance != null && !helpInstance.IsDisposed)
+            {
+                if (helpInstance.WindowState == FormWindowState.Minimized)
+                {
+                    // Wenn minimiert → wieder normal
+                    helpInstance.WindowState = FormWindowState.Normal;
+                    helpInstance.Show();
+                    helpInstance.BringToFront();
+                }
+                else
+                {
+                    // Wenn normal oder maximiert → minimieren
+                    helpInstance.WindowState = FormWindowState.Minimized;
+                }
+            }
+            else if (coffeeInstance != null && !coffeeInstance.IsDisposed)
+            {
+                if (coffeeInstance.WindowState == FormWindowState.Minimized)
+                {
+                    // Wenn minimiert → wieder normal
+                    coffeeInstance.WindowState = FormWindowState.Normal;
+                    coffeeInstance.Show();
+                    coffeeInstance.BringToFront();
+                }
+                else
+                {
+                    // Wenn normal oder maximiert → minimieren
+                    coffeeInstance.WindowState = FormWindowState.Minimized;
                 }
             }
         }
@@ -3766,9 +3811,9 @@ namespace OutlastSaveManager
             {
                 // Übergibt die aktuelle Manager-Instanz an mods
                 modsInstance = new mods(this);
+                modsInstance.FormClosed += (s, args) => modsInstance = null;
                 modsInstance.Show();
 
-                modsInstance.FormClosed += (s, args) => modsInstance = null;
             }
             else
             {
