@@ -178,5 +178,17 @@ namespace OutlastSaveManager {
                 this["speedrun"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool pauseLoss {
+            get {
+                return ((bool)(this["pauseLoss"]));
+            }
+            set {
+                this["pauseLoss"] = value;
+            }
+        }
     }
 }

@@ -4185,6 +4185,13 @@ namespace OutlastSaveManager
                 RegisterAllHotkeys();
             }
         }
+
+        internal void pauseLoss(bool value)
+        {
+            File.WriteAllText(commandsCFG,$"switchPause {value.ToString().ToLower()}");
+            forehook();
+            SimulateKey();
+        }
     }
 
 

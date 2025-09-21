@@ -201,10 +201,11 @@
             pauselossChk.Name = "pauselossChk";
             pauselossChk.ReadOnly = false;
             pauselossChk.Ripple = true;
-            pauselossChk.Size = new Size(241, 37);
+            pauselossChk.Size = new Size(294, 37);
             pauselossChk.TabIndex = 2;
-            pauselossChk.Text = "Pause on Loss Focus - TODO";
+            pauselossChk.Text = "Pause on Loss Focus - Coming Soon";
             pauselossChk.UseVisualStyleBackColor = false;
+            pauselossChk.CheckedChanged += pauselossChk_CheckedChanged;
             // 
             // fpsChk
             // 
@@ -391,7 +392,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
-            ClientSize = new Size(435, 913);
+            ClientSize = new Size(467, 991);
             Controls.Add(label1);
             Controls.Add(panel1);
             ForeColor = SystemColors.ControlLightLight;

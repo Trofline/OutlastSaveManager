@@ -66,9 +66,9 @@ namespace OutlastSaveManager
             this.MinimizeBox = false; // Minimieren-Button weg
             this.Icon = Resources.logo;
 
-            label1.BackColor = Color.FromArgb(33,33,33);
-            
-            
+            label1.BackColor = Color.FromArgb(33, 33, 33);
+
+
             this.Size = new Size(355, 718);
             this.StartPosition = FormStartPosition.CenterScreen;
             this.Sizable = false;
@@ -76,9 +76,9 @@ namespace OutlastSaveManager
             materialButton1.AutoSize = false;
             materialButton2.AutoSize = false;
             materialButton3.AutoSize = false;
-            materialButton1.Size = new Size(157,36);
-            materialButton2.Size = new Size(157,36);
-            materialButton3.Size = new Size(157,36);
+            materialButton1.Size = new Size(157, 36);
+            materialButton2.Size = new Size(157, 36);
+            materialButton3.Size = new Size(157, 36);
             CenterFormOnScreen();
 
             // Manager-Instanz initialisieren
@@ -98,6 +98,7 @@ namespace OutlastSaveManager
             shCameraChk.CheckedChanged -= shCameraChk_CheckedChanged;
             lockHitboxChk.CheckedChanged -= lockHitboxChk_CheckedChanged;
             disKey.CheckedChanged -= disKey_CheckedChanged;
+            pauselossChk.CheckedChanged -= pauselossChk_CheckedChanged;
 
 
             minimizeChk.Checked = prop.Default.minimizedBoot;
@@ -113,6 +114,7 @@ namespace OutlastSaveManager
             shCameraChk.Checked = prop.Default.shCamera;
             lockHitboxChk.Checked = prop.Default.hitboxChange;
             disKey.Checked = prop.Default.speedrun;
+            pauselossChk.Checked = prop.Default.pauseLoss;
 
 
             // Events wieder anmelden
@@ -129,6 +131,10 @@ namespace OutlastSaveManager
             shCameraChk.CheckedChanged += shCameraChk_CheckedChanged;
             lockHitboxChk.CheckedChanged += lockHitboxChk_CheckedChanged;
             disKey.CheckedChanged += disKey_CheckedChanged;
+            pauselossChk.CheckedChanged += pauselossChk_CheckedChanged;
+
+
+            pauselossChk.Enabled = false; //TODO : DELETE AFTER
         }
 
 
@@ -385,6 +391,13 @@ namespace OutlastSaveManager
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void pauselossChk_CheckedChanged(object sender, EventArgs e)
+        {
+            manager.pauseLoss(pauselossChk.Checked);
+            prop.Default.pauseLoss = pauselossChk.Checked;
+            prop.Default.Save();
         }
     }
 
