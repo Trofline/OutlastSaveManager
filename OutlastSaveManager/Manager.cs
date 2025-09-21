@@ -129,70 +129,70 @@ namespace OutlastSaveManager
         // track which ids are currently registered so we can unregister them later
         private readonly HashSet<int> registeredHotkeyIds = new HashSet<int>();
 
-        private const int HOTKEY_Menu = 9000;
-        private const int HOTKEY_DeleteExcept = 9001;
-        private const int HOTKEY_AddSelected = 9002;
-        private const int HOTKEY_LoadPreset_1 = 9003;
-        private const int HOTKEY_LoadPreset_2 = 9004;
-        private const int HOTKEY_LoadPreset_3 = 9005;
-        private const int HOTKEY_LoadPreset_4 = 9006;
-        private const int HOTKEY_LoadPreset_5 = 9007;
-        private const int HOTKEY_LoadPreset_6 = 9017;
-        private const int HOTKEY_LoadPreset_7 = 9018;
-        private const int HOTKEY_LoadPreset_8 = 9019;
-        private const int HOTKEY_LoadPreset_9 = 9020;
-        private const int HOTKEY_SavePreset_1 = 9008;
-        private const int HOTKEY_SavePreset_2 = 9009;
-        private const int HOTKEY_SavePreset_3 = 9010;
-        private const int HOTKEY_SavePreset_4 = 9011;
-        private const int HOTKEY_SavePreset_5 = 9012;
-        private const int HOTKEY_SavePreset_6 = 9013;
-        private const int HOTKEY_SavePreset_7 = 9014;
-        private const int HOTKEY_SavePreset_8 = 9015;
-        private const int HOTKEY_SavePreset_9 = 9016;
-        private const int HOTKEY_InfiniteNightVision = 9021;
-        private const int HOTKEY_FreezeEnemy = 9022;
-        private const int HOTKEY_NoDamage = 9023;
-        private const int HOTKEY_Freecam = 9024;
-        private const int HOTKEY_StatFPS = 9025;
-        private const int HOTKEY_Gamma10 = 9026;
-        private const int HOTKEY_StatLevels = 9027;
-        private const int HOTKEY_ShowCollision = 9028;
-        private const int HOTKEY_SetInsaneDifficulty = 9029;
-        private const int HOTKEY_TPFreecam = 9030;
-        private const int HOTKEY_volumes = 9031;
-        private const int HOTKEY_levelcoloration = 9033;
-        private const int HOTKEY_postprocess = 9034;
-        private const int HOTKEY_CTRL_F1 = 9035;
-        private const int HOTKEY_CTRL_F2 = 9036;
-        private const int HOTKEY_CTRL_F3 = 9037;
-        private const int HOTKEY_CTRL_F4 = 9038;
-        private const int HOTKEY_F1 = 9039;
-        private const int HOTKEY_F2 = 9040;
-        private const int HOTKEY_F3 = 9041;
-        private const int HOTKEY_F4  = 9042;
-        private const int HOTKEY_Exit = 9043;
-        private const int HOTKEY_ShowDebug = 9044;
-        private const int HOTKEY_Paths = 9045;
-        private const int HOTKEY_playerinfo = 9046;
-        private const int HOTKEY_gamemarkers = 9047;
-        private const int HOTKEY_meshedges= 9048;
-        private const int HOTKEY_bounds= 9049;
-        private const int HOTKEY_staticmeshes= 9050;
-        private const int HOTKEY_ai= 9051;
-        private const int HOTKEY_gamespeed = 9052;
-        private const int HOTKEY_reloadcheckpoint = 9053;
-        private const int HOTKEY_fog = 9054;
-        private const int HOTKEY_removedocuments = 9055;
-        private const int HOTKEY_removerecordings = 9056;
-        private const int HOTKEY_removecollactibles = 9057;
-        private const int HOTKEY_rsw = 9058;
-        private const int HOTKEY_loadCheckpoint = 9059;
-        private const int HOTKEY_Normal = 9060;
-        private const int HOTKEY_Vault = 9061;
-        private const int HOTKEY_Door = 9062;
-        private const int HOTKEY_Shimmy = 9063;
-        private const int HOTKEY_saveCheckpoint = 9064;
+        public const int HOTKEY_Menu = 9000;
+        public const int HOTKEY_DeleteExcept = 9001;
+        public const int HOTKEY_AddSelected = 9002;
+        public const int HOTKEY_LoadPreset_1 = 9003;
+        public const int HOTKEY_LoadPreset_2 = 9004;
+        public const int HOTKEY_LoadPreset_3 = 9005;
+        public const int HOTKEY_LoadPreset_4 = 9006;
+        public const int HOTKEY_LoadPreset_5 = 9007;
+        public const int HOTKEY_LoadPreset_6 = 9017;
+        public const int HOTKEY_LoadPreset_7 = 9018;
+        public const int HOTKEY_LoadPreset_8 = 9019;
+        public const int HOTKEY_LoadPreset_9 = 9020;
+        public const int HOTKEY_SavePreset_1 = 9008;
+        public const int HOTKEY_SavePreset_2 = 9009;
+        public const int HOTKEY_SavePreset_3 = 9010;
+        public const int HOTKEY_SavePreset_4 = 9011;
+        public const int HOTKEY_SavePreset_5 = 9012;
+        public const int HOTKEY_SavePreset_6 = 9013;
+        public const int HOTKEY_SavePreset_7 = 9014;
+        public const int HOTKEY_SavePreset_8 = 9015;
+        public const int HOTKEY_SavePreset_9 = 9016;
+        public const int HOTKEY_InfiniteNightVision = 9021;
+        public const int HOTKEY_FreezeEnemy = 9022;
+        public const int HOTKEY_NoDamage = 9023;
+        public const int HOTKEY_Freecam = 9024;
+        public const int HOTKEY_StatFPS = 9025;
+        public const int HOTKEY_Gamma10 = 9026;
+        public const int HOTKEY_StatLevels = 9027;
+        public const int HOTKEY_ShowCollision = 9028;
+        public const int HOTKEY_SetInsaneDifficulty = 9029;
+        public const int HOTKEY_TPFreecam = 9030;
+        public const int HOTKEY_volumes = 9031;
+        public const int HOTKEY_levelcoloration = 9033;
+        public const int HOTKEY_postprocess = 9034;
+        public const int HOTKEY_CTRL_F1 = 9035;
+        public const int HOTKEY_CTRL_F2 = 9036;
+        public const int HOTKEY_CTRL_F3 = 9037;
+        public const int HOTKEY_CTRL_F4 = 9038;
+        public const int HOTKEY_F1 = 9039;
+        public const int HOTKEY_F2 = 9040;
+        public const int HOTKEY_F3 = 9041;
+        public const int HOTKEY_F4  = 9042;
+        public const int HOTKEY_Exit = 9043;
+        public const int HOTKEY_ShowDebug = 9044;
+        public const int HOTKEY_Paths = 9045;
+        public const int HOTKEY_playerinfo = 9046;
+        public const int HOTKEY_gamemarkers = 9047;
+        public const int HOTKEY_meshedges= 9048;
+        public const int HOTKEY_bounds= 9049;
+        public const int HOTKEY_staticmeshes= 9050;
+        public const int HOTKEY_ai= 9051;
+        public const int HOTKEY_gamespeed = 9052;
+        public const int HOTKEY_reloadcheckpoint = 9053;
+        public const int HOTKEY_fog = 9054;
+        public const int HOTKEY_removedocuments = 9055;
+        public const int HOTKEY_removerecordings = 9056;
+        public const int HOTKEY_removecollactibles = 9057;
+        public const int HOTKEY_rsw = 9058;
+        public const int HOTKEY_loadCheckpoint = 9059;
+        public const int HOTKEY_Normal = 9060;
+        public const int HOTKEY_Vault = 9061;
+        public const int HOTKEY_Door = 9062;
+        public const int HOTKEY_Shimmy = 9063;
+        public const int HOTKEY_saveCheckpoint = 9064;
 
 
         private bool debugActive = false;
@@ -260,7 +260,7 @@ namespace OutlastSaveManager
         //push and upload on github,update version.txt in github
         //------------------------------------------------------------------------------------------------------
 
-        private static string LocalVersion = "2.2.9";
+        private static string LocalVersion = "2.3.0";
         private void changelogs()
         {
             AddInfoLog("Most of the new features are only useable via Hotkeys!\nIf you got more ideas or any bug, just text me on discord\nRead the README.md for further information\n");
@@ -650,6 +650,9 @@ namespace OutlastSaveManager
             }
         }
 
+
+
+        
         /// <summary>
         /// Parses "CTRL+SHIFT+S" style string into KeyModifiers + Keys.
         /// falls das enum KeyModifiers in deinem Projekt andere Werte hat, passt die Zahlen hier an.
@@ -1452,9 +1455,364 @@ namespace OutlastSaveManager
             }
         }
 
+        public void TriggerHotkey(int hotkeyId)
+        {
+            forehook();
+            // Der Switch-Case aus WndProc, aber ohne Message-Objekt
+            switch (hotkeyId)
+            {
+                case HOTKEY_Menu:
+                    if (this.WindowState == FormWindowState.Minimized)
+                    {
+                        this.WindowState = FormWindowState.Normal;
+                        this.Show();
+                        this.Activate();
+                        AddLog("Changed WindowState");
+                        ToggleMods();
+                    }
+                    else
+                    {
+                        FadeOutAndMinimize();
+                        AddLog("Changed WindowState");
+                    }
+                    break;
 
+                case HOTKEY_DeleteExcept:
+                    this.BeginInvoke((Action)(() => deleteEveryCheckpointExceptReadOnly()));
+                    AddLog("Removed checkpoints");
+                    break;
 
+                case HOTKEY_AddSelected:
+                    this.BeginInvoke((Action)(() => addEveryCheckpoint()));
+                    AddLog("Added checkpoints");
+                    break;
 
+                case HOTKEY_LoadPreset_1:
+                    this.BeginInvoke((Action)(() => deleteEveryCheckpointExceptReadOnly()));
+                    this.BeginInvoke((Action)(() => ApplyPreset(treeViewProject, 0)));
+                    this.BeginInvoke((Action)(() => addEveryCheckpoint()));
+                    AddLog("Loaded Preset 1");
+                    break;
+
+                case HOTKEY_LoadPreset_2:
+                    this.BeginInvoke((Action)(() => deleteEveryCheckpointExceptReadOnly()));
+                    this.BeginInvoke((Action)(() => ApplyPreset(treeViewProject, 1)));
+                    this.BeginInvoke((Action)(() => addEveryCheckpoint()));
+                    AddLog("Loaded Preset 2");
+                    break;
+
+                case HOTKEY_LoadPreset_3:
+                    this.BeginInvoke((Action)(() => deleteEveryCheckpointExceptReadOnly()));
+                    this.BeginInvoke((Action)(() => ApplyPreset(treeViewProject, 2)));
+                    this.BeginInvoke((Action)(() => addEveryCheckpoint()));
+                    AddLog("Loaded Preset 3");
+                    break;
+
+                case HOTKEY_LoadPreset_4:
+                    this.BeginInvoke((Action)(() => deleteEveryCheckpointExceptReadOnly()));
+                    this.BeginInvoke((Action)(() => ApplyPreset(treeViewProject, 3)));
+                    this.BeginInvoke((Action)(() => addEveryCheckpoint()));
+                    AddLog("Loaded Preset 4");
+                    break;
+
+                case HOTKEY_LoadPreset_5:
+                    this.BeginInvoke((Action)(() => deleteEveryCheckpointExceptReadOnly()));
+                    this.BeginInvoke((Action)(() => ApplyPreset(treeViewProject, 4)));
+                    this.BeginInvoke((Action)(() => addEveryCheckpoint()));
+                    AddLog("Loaded Preset 5");
+                    break;
+
+                case HOTKEY_LoadPreset_6:
+                    this.BeginInvoke((Action)(() => deleteEveryCheckpointExceptReadOnly()));
+                    this.BeginInvoke((Action)(() => ApplyPreset(treeViewProject, 5)));
+                    this.BeginInvoke((Action)(() => addEveryCheckpoint()));
+                    AddLog("Loaded Preset 6");
+                    break;
+
+                case HOTKEY_LoadPreset_7:
+                    this.BeginInvoke((Action)(() => deleteEveryCheckpointExceptReadOnly()));
+                    this.BeginInvoke((Action)(() => ApplyPreset(treeViewProject, 6)));
+                    this.BeginInvoke((Action)(() => addEveryCheckpoint()));
+                    AddLog("Loaded Preset 7");
+                    break;
+
+                case HOTKEY_LoadPreset_8:
+                    this.BeginInvoke((Action)(() => deleteEveryCheckpointExceptReadOnly()));
+                    this.BeginInvoke((Action)(() => ApplyPreset(treeViewProject, 7)));
+                    this.BeginInvoke((Action)(() => addEveryCheckpoint()));
+                    AddLog("Loaded Preset 8");
+                    break;
+
+                case HOTKEY_LoadPreset_9:
+                    this.BeginInvoke((Action)(() => deleteEveryCheckpointExceptReadOnly()));
+                    this.BeginInvoke((Action)(() => ApplyPreset(treeViewProject, 8)));
+                    this.BeginInvoke((Action)(() => addEveryCheckpoint()));
+                    AddLog("Loaded Preset 9");
+                    break;
+
+                case HOTKEY_SavePreset_1:
+                    this.BeginInvoke((Action)(() => SaveCurrentTreeAsPreset(treeViewProject, 0)));
+                    AddLog("Saved Preset 1");
+                    break;
+
+                case HOTKEY_SavePreset_2:
+                    this.BeginInvoke((Action)(() => SaveCurrentTreeAsPreset(treeViewProject, 1)));
+                    AddLog("Saved Preset 2");
+                    break;
+
+                case HOTKEY_SavePreset_3:
+                    this.BeginInvoke((Action)(() => SaveCurrentTreeAsPreset(treeViewProject, 2)));
+                    AddLog("Saved Preset 3");
+                    break;
+
+                case HOTKEY_SavePreset_4:
+                    this.BeginInvoke((Action)(() => SaveCurrentTreeAsPreset(treeViewProject, 3)));
+                    AddLog("Saved Preset 4");
+                    break;
+
+                case HOTKEY_SavePreset_5:
+                    this.BeginInvoke((Action)(() => SaveCurrentTreeAsPreset(treeViewProject, 4)));
+                    AddLog("Saved Preset 5");
+                    break;
+
+                case HOTKEY_SavePreset_6:
+                    this.BeginInvoke((Action)(() => SaveCurrentTreeAsPreset(treeViewProject, 5)));
+                    AddLog("Saved Preset 6");
+                    break;
+
+                case HOTKEY_SavePreset_7:
+                    this.BeginInvoke((Action)(() => SaveCurrentTreeAsPreset(treeViewProject, 6)));
+                    AddLog("Saved Preset 7");
+                    break;
+
+                case HOTKEY_SavePreset_8:
+                    this.BeginInvoke((Action)(() => SaveCurrentTreeAsPreset(treeViewProject, 7)));
+                    AddLog("Saved Preset 8");
+                    break;
+
+                case HOTKEY_SavePreset_9:
+                    this.BeginInvoke((Action)(() => SaveCurrentTreeAsPreset(treeViewProject, 8)));
+                    AddLog("Saved Preset 9");
+                    break;
+
+                case HOTKEY_InfiniteNightVision:
+                    nightvision();
+                    break;
+
+                case HOTKEY_FreezeEnemy:
+                    freezeEnemy();
+                    break;
+
+                case HOTKEY_NoDamage:
+                    noDamage();
+                    break;
+                case HOTKEY_Freecam:
+                    isFreecam = !isFreecam;
+
+                    if (isFreecam)
+                    {
+                        File.WriteAllText(commandsCFG, "Camera Freecam");
+                    }
+                    else
+                    {
+                        File.WriteAllText(commandsCFG, "Camera Default");
+                    }
+                    SimulateKey();
+                    break;
+                case HOTKEY_StatFPS:
+                    File.WriteAllText(commandsCFG, "Stat FPS");
+                    SimulateKey();
+                    break;
+                case HOTKEY_ShowCollision:
+                    File.WriteAllText(commandsCFG, "Show COLLISION");
+                    SimulateKey();
+                    break;
+                case HOTKEY_Gamma10:
+                    isGamma10 = !isGamma10;
+                    if (isGamma10)
+                    {
+                        File.WriteAllText(commandsCFG, "Gamma 10");
+                    }
+                    else
+                    {
+                        File.WriteAllText(commandsCFG, "Gamma 3");//TODO CHECK IF WORKING
+                    }
+                    SimulateKey();
+                    break;
+                case HOTKEY_StatLevels:
+                    File.WriteAllText(commandsCFG, "Stat LEVELS");
+                    SimulateKey();
+                    break;
+                case HOTKEY_SetInsaneDifficulty:
+                    File.WriteAllText(commandsCFG, "set OLGame DifficultyMode EDM_Insane");
+                    SimulateKey();
+                    break;
+                case HOTKEY_volumes:
+                    File.WriteAllText(commandsCFG, "Show VOLUMES");
+                    SimulateKey();
+                    break;
+                case HOTKEY_levelcoloration:
+                    File.WriteAllText(commandsCFG, "Show LEVELCOLORATION");
+                    SimulateKey();
+                    break;
+                case HOTKEY_postprocess:
+                    File.WriteAllText(commandsCFG, "Show POSTPROCESS");
+                    SimulateKey();
+                    break;
+                case HOTKEY_TPFreecam:
+                    tptofreecam();
+                    File.WriteAllText(commandsCFG, "Camera Default");
+                    isFreecam = false;
+                    SimulateKey();
+                    break;
+                case HOTKEY_CTRL_F1:
+                    externalwarning();
+                    if (prop.Default.externalModPackage) break;
+                    File.WriteAllText(commandsCFG, "SavePos 1");//TODO
+                    SimulateKey();
+                    break;
+                case HOTKEY_CTRL_F2:
+                    externalwarning();
+                    if (prop.Default.externalModPackage) break;
+                    File.WriteAllText(commandsCFG, "SavePos 2");//TODO
+                    SimulateKey();
+                    break;
+                case HOTKEY_CTRL_F3:
+                    externalwarning();
+                    if (prop.Default.externalModPackage) break;
+                    File.WriteAllText(commandsCFG, "SavePos 3");//TODO
+                    SimulateKey();
+                    break;
+                case HOTKEY_CTRL_F4:
+                    externalwarning();
+                    if (prop.Default.externalModPackage) break;
+                    File.WriteAllText(commandsCFG, "SavePos 4");//TODO
+                    SimulateKey();
+                    break;
+                case HOTKEY_F1:
+                    externalwarning();
+                    if (prop.Default.externalModPackage) break;
+                    File.WriteAllText(commandsCFG, $"LoadPos 1 {prop.Default.shCamera.ToString().ToLower()}");//TODO
+                    SimulateKey();
+                    break;
+                case HOTKEY_F2:
+                    externalwarning();
+                    if (prop.Default.externalModPackage) break;
+                    File.WriteAllText(commandsCFG, $"LoadPos 2 {prop.Default.shCamera.ToString().ToLower()}");
+                    SimulateKey();
+                    break;
+                case HOTKEY_F3:
+                    externalwarning();
+                    if (prop.Default.externalModPackage) break;
+                    File.WriteAllText(commandsCFG, $"LoadPos 3 {prop.Default.shCamera.ToString().ToLower()}");
+                    SimulateKey();
+                    break;
+                case HOTKEY_F4:
+                    externalwarning();
+                    if (prop.Default.externalModPackage) break;
+                    File.WriteAllText(commandsCFG, $"LoadPos 4 {prop.Default.shCamera.ToString().ToLower()}");
+                    SimulateKey();
+                    break;
+                case HOTKEY_Exit:
+                    var OLProc = Process.GetProcessesByName("OLGame");
+                    foreach (var item in OLProc)
+                    {
+                        item.Kill();
+                        item.WaitForExit();
+                    }
+                    break;
+                case HOTKEY_ShowDebug:
+                    File.WriteAllText(commandsCFG, "ShowDebug");
+                    SimulateKey();
+                    break;
+                case HOTKEY_Paths:
+                    File.WriteAllText(commandsCFG, "Show Paths");
+                    SimulateKey();
+                    break;
+                case HOTKEY_playerinfo:
+                    File.WriteAllText(commandsCFG, "playerinfo");
+                    SimulateKey();
+                    break;
+                case HOTKEY_staticmeshes:
+                    File.WriteAllText(commandsCFG, "Show STATICMESHES");
+                    SimulateKey();
+                    break;
+                case HOTKEY_bounds:
+                    File.WriteAllText(commandsCFG, "Show BOUNDS");
+                    SimulateKey();
+                    break;
+                case HOTKEY_ai:
+                    File.WriteAllText(commandsCFG, "ToggleAIDebug");
+                    SimulateKey();
+                    break;
+                case HOTKEY_meshedges:
+                    File.WriteAllText(commandsCFG, "Show MESHEDGES");
+                    SimulateKey();
+                    break;
+                case HOTKEY_gamemarkers:
+                    externalwarning();
+                    isDebugledge = !isDebugledge;
+                    File.WriteAllText(commandsCFG, $"DebugMarkers {isDebugledge.ToString().ToLower()}");
+                    SimulateKey();
+                    break;
+                case HOTKEY_gamespeed:
+                    externalwarning();
+                    gamespeedValue = !gamespeedValue;
+                    if (gamespeedValue)
+                    {
+                        File.WriteAllText(commandsCFG, "gamespeed 10");
+
+                    }
+                    else
+                    {
+                        File.WriteAllText(commandsCFG, "gamespeed 1");
+
+                    }
+                    SimulateKey();
+                    break;
+                case HOTKEY_reloadcheckpoint:
+                    externalwarning();
+                    File.WriteAllText(commandsCFG, "ReloadCheckpoint");
+                    SimulateKey();
+                    break;
+                case HOTKEY_fog:
+                    File.WriteAllText(commandsCFG, "Show FOG");
+                    SimulateKey();
+                    break;
+                case HOTKEY_removecollactibles:
+                    externalwarning();
+                    File.WriteAllText(commandsCFG, "removerecordings || removedocuments");
+                    SimulateKey();
+                    break;
+                case HOTKEY_rsw:
+                    externalwarning();
+                    File.WriteAllText(commandsCFG, "rsw");
+                    SimulateKey();
+                    break;
+                case HOTKEY_loadCheckpoint:
+                    deleteEveryCheckpointExceptReadOnly();
+                    File.WriteAllText(commandsCFG, "loadcheckpoint");
+                    SimulateKey();
+                    break;
+                case HOTKEY_saveCheckpoint:
+                    File.WriteAllText(commandsCFG, "savecheckpoint");
+                    SimulateKey();
+                    break;
+                case HOTKEY_Normal:
+                    hitboxnormal();
+                    break;
+                case HOTKEY_Vault:
+                    hiboxvault();
+                    break;
+                case HOTKEY_Door:
+                    hitboxdoor();
+                    break;
+                case HOTKEY_Shimmy:
+                    hitboxshimmy();
+                    break;
+            }
+
+        }
 
         [DllImport("user32.dll", SetLastError = true)]
         private static extern void keybd_event(byte bVk, byte bScan, int dwFlags, int dwExtraInfo);

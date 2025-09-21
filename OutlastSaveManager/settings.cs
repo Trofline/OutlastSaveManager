@@ -1,4 +1,6 @@
-﻿using OutlastSaveManager.Properties;
+﻿using MaterialSkin;
+using MaterialSkin.Controls;
+using OutlastSaveManager.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,23 +9,77 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace OutlastSaveManager
 {
-    public partial class settings : Form
+    public partial class settings : MaterialForm
     {
         bool userChecked = false;
         public string bootParameter;
         private Binding bindingInstance;
         private HotkeyManager smhkInstance;
         private Manager manager;
+
+
+        private const int DWMWA_USE_IMMERSIVE_DARK_MODE = 20; // Windows 10 1809+
+
+        [DllImport("dwmapi.dll")]
+        private static extern int DwmSetWindowAttribute(
+            IntPtr hwnd,
+            int attr,
+            ref int attrValue,
+            int attrSize
+        );
+        protected override void OnHandleCreated(EventArgs e)
+        {
+            base.OnHandleCreated(e);
+            int useDark = 1;
+            DwmSetWindowAttribute(this.Handle, DWMWA_USE_IMMERSIVE_DARK_MODE,
+                                  ref useDark, sizeof(int));
+        }
+        private Panel titleBar;
+        private Label titleLabel;
+        private Button closeButton;
+
+
         public settings()
         {
             InitializeComponent();
+
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
+            materialSkinManager.ColorScheme = new ColorScheme(
+
+            Primary.Grey900,   // Primary → Balken
+            Primary.Grey900,   // DarkPrimary
+            Primary.Pink800,    // LightPrimary
+            Accent.Pink700,
+            TextShade.WHITE
+            );
+
+            this.MaximizeBox = false; // Maximieren-Button weg
+            this.MinimizeBox = false; // Minimieren-Button weg
             this.Icon = Resources.logo;
+
+            label1.BackColor = Color.FromArgb(33,33,33);
+            
+            
+            this.Size = new Size(355, 718);
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.Sizable = false;
+
+            materialButton1.AutoSize = false;
+            materialButton2.AutoSize = false;
+            materialButton3.AutoSize = false;
+            materialButton1.Size = new Size(157,36);
+            materialButton2.Size = new Size(157,36);
+            materialButton3.Size = new Size(157,36);
+
 
             // Manager-Instanz initialisieren
             manager = Manager.Instance;
@@ -74,6 +130,9 @@ namespace OutlastSaveManager
             lockHitboxChk.CheckedChanged += lockHitboxChk_CheckedChanged;
             disKey.CheckedChanged += disKey_CheckedChanged;
         }
+
+
+
 
         private void settings_Load(object sender, EventArgs e)
         {
@@ -315,6 +374,11 @@ namespace OutlastSaveManager
             prop.Default.Save();
 
             manager.DisableHotkeys();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 
