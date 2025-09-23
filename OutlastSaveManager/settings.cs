@@ -100,7 +100,7 @@ namespace OutlastSaveManager
             disKey.CheckedChanged -= disKey_CheckedChanged;
             pauselossChk.CheckedChanged -= pauselossChk_CheckedChanged;
 
-
+            
             minimizeChk.Checked = prop.Default.minimizedBoot;
             duplicationChk.Checked = prop.Default.duplicationFix;
             bitChk.Checked = prop.Default.bit;
@@ -343,7 +343,6 @@ namespace OutlastSaveManager
                 }
             }
         }
-
         private void bootBtn_Click(object sender, EventArgs e)
         {
             Process.Start("explorer.exe", Path.Combine(Program.startupPath, "SaveManager", "Boot"));
@@ -379,7 +378,6 @@ namespace OutlastSaveManager
             userChecked = true;
             RestartApplication2();
         }
-
         private void disKey_CheckedChanged(object sender, EventArgs e)
         {
             prop.Default.speedrun = disKey.Checked;
@@ -387,7 +385,6 @@ namespace OutlastSaveManager
 
             manager.DisableHotkeys();
         }
-
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
