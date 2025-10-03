@@ -934,7 +934,7 @@ namespace OutlastSaveManager
         {
             try
             {
-                string url = "https://raw.githubusercontent.com/Trofline/Tools/main/version.txt";
+                string url = "https://raw.githubusercontent.com/Trofline/OutlastSaveManager/main/version.txt";
 
                 // Synchronously download the version file
                 string versionFile;
